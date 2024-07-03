@@ -4,6 +4,7 @@ void showAlertDialog({
   required BuildContext context,
   required String title,
   required String content,
+  required Function()? onPressed,
 }) {
   AlertDialog alert = AlertDialog(
     title: Text(title),
@@ -13,6 +14,10 @@ void showAlertDialog({
         onPressed: () {
           Navigator.of(context).pop();
         },
+        child: const Text('Cancel'),
+      ),
+      ElevatedButton(
+        onPressed: onPressed,
         child: const Text('OK'),
       ),
     ],

@@ -1,8 +1,8 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:tech_haven_admin/model/bar_graph_model.dart';
-import 'package:tech_haven_admin/model/graph_model.dart';
-import 'package:tech_haven_admin/main/responsive/responsive.dart';
+import 'package:tech_haven_admin/core/model/bar_graph_model.dart';
+import 'package:tech_haven_admin/core/model/graph_model.dart';
+import 'package:tech_haven_admin/features/main/responsive/responsive.dart';
 import 'package:tech_haven_admin/core/common/widgets/custom_card.dart';
 
 class BarGraphCard extends StatelessWidget {

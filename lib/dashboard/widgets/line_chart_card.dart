@@ -1,6 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:tech_haven_admin/main/responsive/responsive.dart';
+import 'package:tech_haven_admin/features/main/responsive/responsive.dart';
 import 'package:tech_haven_admin/core/common/widgets/custom_card.dart';
 
 class LineChartCard extends StatelessWidget {

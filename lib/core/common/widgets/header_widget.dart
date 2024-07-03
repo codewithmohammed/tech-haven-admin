@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:tech_haven_admin/controller/responsive_provider.dart';
+import 'package:tech_haven_admin/core/common/controller/responsive_provider.dart';
 import 'package:tech_haven_admin/core/common/widgets/custom_text_form_field.dart';
-import 'package:tech_haven_admin/main/responsive/responsive.dart';
+import 'package:tech_haven_admin/features/main/responsive/responsive.dart';
 
 class Header extends StatelessWidget {
   const Header({
@@ -12,7 +12,8 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final responsiveProvider = Provider.of<ResponsiveProvider>(context);
-    final TextEditingController searchTextEditingController = TextEditingController();
+    final TextEditingController searchTextEditingController =
+        TextEditingController();
     return SizedBox(
       height: 35,
       child: Row(
@@ -34,42 +35,41 @@ class Header extends StatelessWidget {
                 ),
               ),
             ),
-          if (!Responsive.isMobile(context))
-             Expanded(
-              flex: 4,
-              child: CustomTextFormField(
-                textEditingController: searchTextEditingController,
-                hintText: 'Search',
-                prefixIcon: true,
-              ),
-            ),
-          if (Responsive.isMobile(context))
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                IconButton(
-                  icon: const Icon(
-                    Icons.search,
-                    color: Colors.grey,
-                    size: 25,
-                  ),
-                  onPressed: () {},
-                ),
-                InkWell(
-                  onTap: () => responsiveProvider.openEndDrawer(),
-                  child: CircleAvatar(
-                    backgroundColor: Colors.transparent,
-                    child: Image.asset(
-                      "assets/images/avatar.png",
-                      width: 32,
-                    ),
-                  ),
-                )
-              ],
-            ),
+          // if (!Responsive.isMobile(context))
+          // Expanded(
+          //   flex: 4,
+          //   child: CustomTextFormField(
+          //     textEditingController: searchTextEditingController,
+          //     hintText: 'Search',
+          //     prefixIcon: true,
+          //   ),
+          // ),
+          // if (Responsive.isMobile(context))
+          //   Row(
+          //     crossAxisAlignment: CrossAxisAlignment.center,
+          //     children: [
+          //       IconButton(
+          //         icon: const Icon(
+          //           Icons.search,
+          //           color: Colors.grey,
+          //           size: 25,
+          //         ),
+          //         onPressed: () {},
+          //       ),
+          //       // InkWell(
+          //       //   onTap: () => responsiveProvider.openEndDrawer(),
+          //       //   // child: CircleAvatar(
+          //       //   //   backgroundColor: Colors.transparent,
+          //       //   //   child: Image.asset(
+          //       //   //     "assets/images/avatar.png",
+          //       //   //     width: 32,
+          //       //   //   ),
+          //       //   // ),
+          //       // )
+          //     ],
+          //   ),
         ],
       ),
     );
   }
 }
-

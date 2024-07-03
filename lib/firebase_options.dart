@@ -21,25 +21,13 @@ class DefaultFirebaseOptions {
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for android - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -61,4 +49,45 @@ class DefaultFirebaseOptions {
     storageBucket: 'techhaven-f7917.appspot.com',
     measurementId: 'G-WHN6B73GX9',
   );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyCLTWSX42E3mgpsk3AOtMjLBgcEqxD9tdE',
+    appId: '1:774274737207:ios:48e02b066de2c23f494bb2',
+    messagingSenderId: '774274737207',
+    projectId: 'techhaven-f7917',
+    storageBucket: 'techhaven-f7917.appspot.com',
+    androidClientId: '774274737207-qe41gcj4o8ank57gemuoei6p4bgc3unm.apps.googleusercontent.com',
+    iosClientId: '774274737207-m9qt2mh8ccfhj84ba7gb7j8177acdfe0.apps.googleusercontent.com',
+    iosBundleId: 'com.example.techHavenAdmin',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyCLTWSX42E3mgpsk3AOtMjLBgcEqxD9tdE',
+    appId: '1:774274737207:ios:48e02b066de2c23f494bb2',
+    messagingSenderId: '774274737207',
+    projectId: 'techhaven-f7917',
+    storageBucket: 'techhaven-f7917.appspot.com',
+    androidClientId: '774274737207-qe41gcj4o8ank57gemuoei6p4bgc3unm.apps.googleusercontent.com',
+    iosClientId: '774274737207-m9qt2mh8ccfhj84ba7gb7j8177acdfe0.apps.googleusercontent.com',
+    iosBundleId: 'com.example.techHavenAdmin',
+  );
+
+  static const FirebaseOptions android = FirebaseOptions(
+    apiKey: 'AIzaSyAVro7us-blaxGAP76YwOM5zRcZOVF8s0g',
+    appId: '1:774274737207:android:3a88c8944622c844494bb2',
+    messagingSenderId: '774274737207',
+    projectId: 'techhaven-f7917',
+    storageBucket: 'techhaven-f7917.appspot.com',
+  );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyCSZeYBeL_0mr0Ky0_7cjvbRLObFe9X-Ns',
+    appId: '1:774274737207:web:173e33df38c72e4c494bb2',
+    messagingSenderId: '774274737207',
+    projectId: 'techhaven-f7917',
+    authDomain: 'techhaven-f7917.firebaseapp.com',
+    storageBucket: 'techhaven-f7917.appspot.com',
+    measurementId: 'G-D69YNQ60W6',
+  );
+
 }

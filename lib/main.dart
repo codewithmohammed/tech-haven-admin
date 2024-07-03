@@ -2,16 +2,21 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tech_haven_admin/const.dart';
-import 'package:tech_haven_admin/controller/banner_upload_provider.dart';
-import 'package:tech_haven_admin/controller/category_upload_provider.dart';
-import 'package:tech_haven_admin/controller/responsive_provider.dart';
+import 'package:tech_haven_admin/core/common/controller/banner_upload_provider.dart';
+import 'package:tech_haven_admin/core/common/controller/category_upload_provider.dart';
+import 'package:tech_haven_admin/core/common/controller/customer_provider.dart';
+import 'package:tech_haven_admin/core/common/controller/help_request_provider.dart';
+import 'package:tech_haven_admin/core/common/controller/order_provider.dart';
+import 'package:tech_haven_admin/core/common/controller/products_provider.dart';
+import 'package:tech_haven_admin/core/common/controller/responsive_provider.dart';
+import 'package:tech_haven_admin/core/common/controller/vendor_provider.dart';
+import 'package:tech_haven_admin/features/login/splash_screen.dart';
 import 'package:tech_haven_admin/firebase_options.dart';
-import 'package:tech_haven_admin/main/responsive_scaffold.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
+    options: DefaultFirebaseOptions.android,
   );
   runApp(const MyApp());
 }
@@ -44,15 +49,43 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: const Color(0xFF171821),
           fontFamily: 'IBMPlexSans',
           brightness: Brightness.dark),
-      home: MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create: (_) => ResponsiveProvider()),
-          ChangeNotifierProvider(create: (_) => CategoryUploadProvider()),
-          ChangeNotifierProvider(create: (_) => BannerUploadProvider())
-          // ResponsiveScaffold(),
-        ],
-        child: const ResponsiveScaffold(),
-      ),
+      home: MultiProvider(providers: [
+        ChangeNotifierProvider(create: (_) => ResponsiveProvider()),
+        ChangeNotifierProvider(create: (_) => CategoryUploadProvider()),
+        ChangeNotifierProvider(create: (_) => BannerUploadProvider()),
+        ChangeNotifierProvider(create: (_) => VendorProvider()),
+        ChangeNotifierProvider(create: (_) => CustomerProvider()),
+        ChangeNotifierProvider(create: (_) => OrderProvider()),
+        ChangeNotifierProvider(create: (_) => ProductProvider()),
+        ChangeNotifierProvider(create: (_) => HelpRequestProvider()),
+        // ResponsiveScaffold(),
+      ], child: SplashScreen()),
     );
   }
 }
+
+
+
+                // Consumer<CustomerProvider>(
+                            //     builder: (context, value, child) {
+                            //       return value.currentCustomer != null
+                            //           ? Profile(
+                            //               isForVendor: false,
+                            //               photo: value
+                            //                   .currentCustomer!.profilePhoto,
+                            //               name:
+                            //                   value.currentCustomer!.username!,
+                            //               color: value.currentCustomer!.color,
+                            //               email: value.currentCustomer!.email!,
+                            //               isVendor:
+                            //                   value.currentCustomer!.isVendor,
+                            //               phoneNumber: value
+                            //                   .currentCustomer!.phoneNumber!,
+                            //               userID: value.currentCustomer!.uid!,
+                            //               vendorID:
+                            //                   value.currentCustomer!.vendorID!,
+                            //             )
+                            //           : const SizedBox();
+                            //     },
+                            //     // child:
+                            //   )

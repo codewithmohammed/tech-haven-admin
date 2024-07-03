@@ -1,1 +1,46 @@
-{"flutter":{"platforms":{"dart":{"lib/firebase_options.dart":{"projectId":"techhaven-f7917","configurations":{"web":"1:774274737207:web:d3361f67bb92a520494bb2"}}}}}}
+{
+  "flutter": {
+    "platforms": {
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "techhaven-f7917",
+          "configurations": {
+            "android": "1:774274737207:android:3a88c8944622c844494bb2",
+            "ios": "1:774274737207:ios:48e02b066de2c23f494bb2",
+            "macos": "1:774274737207:ios:48e02b066de2c23f494bb2",
+            "web": "1:774274737207:web:d3361f67bb92a520494bb2",
+            "windows": "1:774274737207:web:173e33df38c72e4c494bb2"
+          }
+        }
+      },
+      "android": {
+        "default": {
+          "projectId": "techhaven-f7917",
+          "appId": "1:774274737207:android:3a88c8944622c844494bb2",
+          "fileOutput": "android/app/google-services.json"
+        }
+      }
+    }
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "hosting": {
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "storage": {
+    "rules": "storage.rules"
+  }
+}
